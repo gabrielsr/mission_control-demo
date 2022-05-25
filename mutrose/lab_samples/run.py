@@ -1,9 +1,7 @@
 
 import json
+import os
 from pathlib import Path
-
-from typing import List
-from __init__ import *
 from datetime import datetime
 
 
@@ -12,14 +10,19 @@ from mission_control.deeco_integration.simulation.sim_exec import SimExec
 from mission_control.deeco_integration.simulation.scenario import Scenario
 from mission_control.utils.logger import LogDir
 
-from resources.world_lab_samples import all_skills, near_ic_pc_rooms, pickup_ihtn, get_position_of_poi, container
+from mutrose.mutrose_json_parser import ihtn_from_json
+
+from resources.world_lab_samples import all_skills, near_ic_pc_rooms, get_position_of_poi, container
 
 def gen_requests(times, locations):
+    script_dir = os.path.dirname(__file__)
+
     for time, location in zip(times, locations):
-        task, _ = pickup_ihtn(location)
+        file_path = os.path.join(script_dir, './resources/ihtn_lsl.json')
+        task = ihtn_from_json(file_path)
         yield location, Request(task=task, timestamp=time)
     return
-
+    
 def simp_factors_map(map):
     return map
 
@@ -36,7 +39,7 @@ def main():
     ####
 
     exp_id = exp_gen_id()
-    new_experiment_path = f'executions/exec_{exp_id}'
+    new_experiment_path = f'executions/exe_multrose_lab_samples_{exp_id}'
     path = Path(f'{new_experiment_path}/tmp')
     path.mkdir(parents=True, exist_ok=True)
     LogDir.default_path = f'{new_experiment_path}/logs'
@@ -45,7 +48,7 @@ def main():
     ################
     # Configure scenario
     ####
-    number_of_robots = 6
+    number_of_robots = 1
     number_of_users = 1
 
     # times in which a new request will appear in the trial
@@ -74,7 +77,7 @@ def main():
         nurses = []
         for location, request in gen_requests(request_times, nurse_locations):
             requests.append(request)
-            nurses.append({ 'position': get_position_of_poi(location), 'location': location.label})
+            nurses.append({ 'position': get_position_of_poi(location), 'location': location.label })
 
     ################
     # create the scenario

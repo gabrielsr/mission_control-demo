@@ -10,6 +10,13 @@
             "request": "launch",
             "program": "mission_control_demo/lab_samples/run.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Mutrose lab samples",
+            "type": "python",
+            "request": "launch",
+            "program": "mutrose/lab_samples/run.py",
+            "console": "integratedTerminal"
         }
     ]
 }
