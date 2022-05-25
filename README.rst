@@ -4,7 +4,7 @@ mission_control_demo
 A exemplar project of how to use mission_control with pyDEEco to create simulation and generated mission plans.
 
 Setup
------
+=====
 
 This project uses 'poetry' for mananing dependencies 
 
@@ -19,9 +19,19 @@ This project uses 'poetry' for mananing dependencies
     # and configure a virtual environment
     ~$ poetry shell
 
+Importing hmrs_mission_control by code
+-----------------------------------
+
+Run side by side with 'hmrs_mission_control' code for fixing bugs in it and debuging.
+
+.. code:: bash
+
+    # path considering both projects are in the same folder
+    ~$ pip install -e ./hmrs_mission_control
+
 
 Run
----
+===
 
 ./mission_control_demo/lab_samples
 
