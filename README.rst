@@ -16,7 +16,7 @@ This project uses 'poetry' for mananing dependencies
     ~$ brew install poetry
     # then use poetry to install dependencies
     ~$ poetry install
-    # and configure a virtual environment
+    # and configure a virtual environment in your shell
     ~$ poetry shell
 
 
