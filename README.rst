@@ -9,6 +9,7 @@ Setup
 This project uses 'poetry' for mananing dependencies 
 
 .. code:: bash
+
     # install
     ~$ pip install poetry
     # Or
@@ -27,6 +28,7 @@ Run
 is an example of simulation. To run:
 
 .. code:: bash
+    
     python ./mission_control_demo/lab_samples/run.py
 
 
