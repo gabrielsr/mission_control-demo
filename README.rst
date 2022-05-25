@@ -29,10 +29,11 @@ is an example of simulation. To run:
 
 .. code:: bash
     
-    python ./mission_control_demo/lab_samples/run.py
+    ~$ python ./mission_control_demo/lab_samples/run.py
+    ~$ python ./mutrose/lab_samples/run.py
 
 
-The is an already configured 'Launch' action for vscode that can be used for execution/debuging.
+The are already configured 'Launch' actions for vscode, which can be used for execution/debuging.
 
 Result
 ------
