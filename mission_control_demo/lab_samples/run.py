@@ -36,7 +36,7 @@ def main():
     ####
 
     exp_id = exp_gen_id()
-    new_experiment_path = f'executions/exec_{exp_id}'
+    new_experiment_path = f'executions/exec_lab_samples_{exp_id}'
     path = Path(f'{new_experiment_path}/tmp')
     path.mkdir(parents=True, exist_ok=True)
     LogDir.default_path = f'{new_experiment_path}/logs'

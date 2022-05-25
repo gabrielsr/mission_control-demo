@@ -18,7 +18,6 @@ def recursive_ihtn_gen(data, key):
             task_methods.append(child_method)
 
         t = AbstractTask(methods = task_methods, name=data[key]['name'])
-        
         return t
     elif data[key]["type"] == "method":
         method_subtasks = []
@@ -28,7 +27,6 @@ def recursive_ihtn_gen(data, key):
             method_subtasks.append(subtask)
         
         m = Method(subtasks = method_subtasks)
-
         return m
     elif data[key]["type"] == "action":
         action_name = data[key]["name"]
