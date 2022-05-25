@@ -1,8 +1,39 @@
-== Run
+====================
+mission_control_demo
+====================
+A exemplar project of how to use mission_control with pyDEEco to create simulation and generated mission plans.
 
-python ..
+Setup
+-----
 
-== Result
+This project uses 'poetry' for mananing dependencies 
+
+.. code:: bash
+    # install
+    ~$ pip install poetry
+    # Or
+    ~$ brew install poetry
+    # then use poetry to install dependencies
+    ~$ poetry install
+    # and configure a virtual environment
+    ~$ poetry shell
+
+
+Run
+---
+
+./mission_control_demo/lab_samples
+
+is an example of simulation. To run:
+
+.. code:: bash
+    python ./mission_control_demo/lab_samples/run.py
+
+
+The is an already configured 'Launch' action for vscode that can be used for execution/debuging.
+
+Result
+------
 
 After executing the demo, a folder will be generated in 'new'
 
