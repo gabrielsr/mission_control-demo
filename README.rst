@@ -29,7 +29,7 @@ is an example of simulation. To run:
 
 .. code:: bash
     
-    python ./mission_control_demo/lab_samples/run.py
+    ~$ python ./mission_control_demo/lab_samples/run.py
 
 
 The is an already configured 'Launch' action for vscode that can be used for execution/debuging.
@@ -37,7 +37,7 @@ The is an already configured 'Launch' action for vscode that can be used for exe
 Result
 ------
 
-After executing the demo, a folder will be generated in 'new'
+After executing the demo, a folder will be generated in */executions*:
 
 .. code:: bash
     
