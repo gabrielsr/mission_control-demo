@@ -1,0 +1,46 @@
+{
+    "17": {
+        "name": "sample-unload",
+        "type": "method",
+        "parent": "16",
+        "agents": [
+            "r1",
+            "lab_arm"
+        ],
+        "children": [
+            "18",
+            "19",
+            "20"
+        ]
+    },
+    "18": {
+        "name": "operate_drawer-open",
+        "type": "action",
+        "parent": "17",
+        "locations": "",
+        "agents": [
+            "r1"
+        ],
+        "children": ""
+    },
+    "19": {
+        "name": "pick_up",
+        "type": "action",
+        "parent": "17",
+        "locations": "",
+        "agents": [
+            "lab_arm"
+        ],
+        "children": ""
+    },
+    "20": {
+        "name": "operate_drawer-close",
+        "type": "action",
+        "parent": "17",
+        "locations": "",
+        "agents": [
+            "r1"
+        ],
+        "children": ""
+    }
+}

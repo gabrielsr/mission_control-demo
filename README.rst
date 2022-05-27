@@ -4,7 +4,7 @@ mission_control_demo
 A exemplar project of how to use mission_control with pyDEEco to create simulation and generated mission plans.
 
 Setup
------
+=====
 
 This project uses 'poetry' for mananing dependencies 
 
@@ -19,9 +19,19 @@ This project uses 'poetry' for mananing dependencies
     # and configure a virtual environment in your shell
     ~$ poetry shell
 
+Importing hmrs_mission_control by code
+-----------------------------------
+
+Run side by side with 'hmrs_mission_control' code for fixing bugs in it and debuging.
+
+.. code:: bash
+
+    # path considering both projects are in the same folder
+    ~$ pip install -e ./hmrs_mission_control
+
 
 Run
----
+===
 
 ./mission_control_demo/lab_samples
 
@@ -30,9 +40,12 @@ is an example of simulation. To run:
 .. code:: bash
     
     ~$ python ./mission_control_demo/lab_samples/run.py
+    ~$ python ./mutrose/lab_samples/run.py
+    ~$ python ./mutrose/food_logistics/run_fld.py
+    ~$ python ./mutrose/food_logistics/run_flp.py
 
 
-The is an already configured 'Launch' action for vscode that can be used for execution/debuging.
+The are already configured 'Launch' actions for vscode, which can be used for execution/debuging.
 
 Result
 ------
