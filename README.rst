@@ -16,7 +16,7 @@ This project uses 'poetry' for mananing dependencies
     ~$ brew install poetry
     # then use poetry to install dependencies
     ~$ poetry install
-    # and configure a virtual environment
+    # and configure a virtual environment in your shell
     ~$ poetry shell
 
 Importing hmrs_mission_control by code
@@ -41,6 +41,8 @@ is an example of simulation. To run:
     
     ~$ python ./mission_control_demo/lab_samples/run.py
     ~$ python ./mutrose/lab_samples/run.py
+    ~$ python ./mutrose/food_logistics/run_fld.py
+    ~$ python ./mutrose/food_logistics/run_flp.py
 
 
 The are already configured 'Launch' actions for vscode, which can be used for execution/debuging.
@@ -48,9 +50,11 @@ The are already configured 'Launch' actions for vscode, which can be used for ex
 Result
 ------
 
-After executing the demo, a folder will be generated in 'new'
+After executing the demo, a folder will be generated in */executions*:
 
-/executions/exec_{}
-|_logs/cf_request_x.log ->  a file for each coalition formation process for each received request
-|_scenarios.json  ->  the initial configuration of the simulation
-|_trial.json  ->  the end state of the simulation, with a plan assigned to a robot if the case a plan was found
+.. code:: bash
+    
+    /executions/exec_{}
+    |_logs/cf_request_x.log # a file for each coalition formation process for each received request
+    |_scenarios.json        # the initial configuration of the simulation
+    |_trial.json            # the end state of the simulation, with a plan assigned to a robot if the case a plan was found
