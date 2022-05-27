@@ -45,7 +45,7 @@ if __name__ == '__main__':
     nurses = [{'label': 'nurse', 'position': get_position_of_poi(location), 'location': location.label } for location in nurse_locations]
 
     script_dir = os.path.dirname(__file__)
-    file_path = os.path.join(script_dir, './resources/ihtn_lsl.json')
+    file_path = os.path.join(script_dir, './ihtn_lsl.json')
     with MultroseJson(file_path, world_model_domain) as ihtn:
         requests.append(Request(task=ihtn, timestamp=4000))
 

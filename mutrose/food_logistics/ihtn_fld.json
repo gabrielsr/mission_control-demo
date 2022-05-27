@@ -66,14 +66,13 @@
         "children": ""
     },
     "5": {
-        "name": "wait-for-food",
+        "name": "deposit-food",
         "type": "action",
         "parent": "3",
         "locations": [
             "Kitchen"
         ],
         "agents": [
-            "r1",
             "Delivery1"
         ],
         "children": ""
@@ -158,14 +157,13 @@
         "children": ""
     },
     "12": {
-        "name": "wait-for-human-to-fetch",
+        "name": "pick-food",
         "type": "action",
         "parent": "10",
         "locations": [
             "RoomA"
         ],
         "agents": [
-            "r1",
             "Patient1"
         ],
         "children": ""

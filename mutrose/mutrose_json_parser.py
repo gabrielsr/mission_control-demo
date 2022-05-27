@@ -51,32 +51,36 @@ class MultroseJson:
     def parse_root(self):
         return self.parse_task(self.data.get('0'))
 
+    @staticmethod
+    def parse_action_node_name(name):
+        pos = name.find("-")
+
+        action_task_type, action_action = "", ""
+        if pos != -1:
+            action_task_type = name[:pos]
+            action_action = name[pos+1:]
+        else:
+            action_task_type = name
+
+        return action_task_type, action_action
+
+
     def parse_action(self, node):
         # TODO improve parse
-        action_name = node["name"]
-        pos = action_name.find("-")
-
-        action_task_type = ""
-        action_action = ""
-        if pos != -1:
-            action_task_type = action_name[:pos]
-            action_action = action_name[pos+1:]
-        else:
-            action_task_type = action_name
+        name = node["name"]
+        task_type, actio_label = self.parse_action_node_name(name)
+        task_type = self.world_model.get(task_type, "task_type")
 
         destination = None
-
-        task_type = self.world_model.get(action_task_type, "task_type")
-
         if node["locations"]:
             destination = self.world_model.get(node["locations"][0], "location")
 
         assign_to = list(map(lambda a: self.role_map.get(a), node["agents"]))
 
-        if action_action == "":
-            a = ElementaryTask(type=task_type, destination=destination, assign_to=assign_to, name=action_name)
+        if actio_label == "":
+            a = ElementaryTask(type=task_type, destination=destination, assign_to=assign_to, name=name)
         else:
-            a = ElementaryTask(type=task_type, destination=destination, action=action_action, assign_to=assign_to, name=action_name)
+            a = ElementaryTask(type=task_type, destination=destination, action=actio_label, assign_to=assign_to, name=name)
 
         return a
 
