@@ -1,0 +1,36 @@
+Title: Mutrose JSON parser as a 'with' resource
+-----------------------------------------------
+
+Context
+-------
+
+Mutrose json is a set of nodes, i.e., a ordered collection of key: nodes,
+in which each key is an integer, and each node is either an task (abstract), method or action
+
+We need to parse the mutrose json to a hierarchy of 'mission_control.data_model' objects.
+The parse needs to parse different node types. While parsing a node, the file can refer to other nodes, and roles that were previous instantiated. 
+So we need a context active while parsing the file. 
+
+One alternative is to have a parser class. We can structure the parser with __enter__/__exit__ so we can call the parser:
+
+[source,python]
+----
+with mutrose_json('/path') as ihtn:
+    # so something
+----
+
+Other alternatives:
+Other alternatives would be to use inner functions for parsing the different nodes. This alternative provide some encapsulation of each node parsing logic,, however, it would be rather difficult to test the parse function for each node type.
+
+
+Decision 
+--------
+
+We will implement mutrose_json as a class with  __enter__/__exit__.
+
+Status: proposed|accepted|deprecated|superseded
+
+
+Consequences
+------------
+No major consequence

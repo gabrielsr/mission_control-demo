@@ -8,11 +8,11 @@ from datetime import datetime
 
 
 from mission_control.data_model.restrictions import Request
-from mission_control.deeco_integration.simulation.sim_exec import SimExec
 from mission_control.deeco_integration.simulation.scenario import Scenario
 from mission_control.utils.logger import LogDir
 
-from resources.world_lab_samples import all_skills, near_ic_pc_rooms, pickup_ihtn, get_position_of_poi, container
+from hospital_world.bindings import all_skills, near_ic_pc_rooms, pickup_ihtn, get_position_of_poi, container
+from ..sim_exec import SimExec
 
 def gen_requests(times, locations):
     for time, location in zip(times, locations):

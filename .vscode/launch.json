@@ -17,6 +17,21 @@
             "request": "launch",
             "program": "mutrose/lab_samples/run.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Mutrose Food Logistics FLP",
+            "type": "python",
+            "request": "launch",
+            "program": "mutrose/food_logistics/run_flp.py",
+            "console": "integratedTerminal"
+        }
+        ,
+        {
+            "name": "Mutrose Food Logistics FLD",
+            "type": "python",
+            "request": "launch",
+            "program": "mutrose/food_logistics/run_fld.py",
+            "console": "integratedTerminal"
         }
     ]
 }

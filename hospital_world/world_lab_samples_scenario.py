@@ -1,6 +1,6 @@
 from mission_control.deeco_integration.simulation.scenario import Scenario
 from mission_control.data_model.restrictions import Request
-from .world_lab_samples import pickup_ihtn, poi
+from .hospital_world.bindings import pickup_ihtn, poi
 
 
 robot_facotrs = [{

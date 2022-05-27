@@ -1,8 +1,10 @@
 
+from curses import wrapper
 import json
 import os
 from pathlib import Path
 from datetime import datetime
+from typing import List
 
 
 from mission_control.data_model import Request
@@ -11,6 +13,26 @@ from mission_control_demo.setup_scenario_and_dump import setup_scenario_and_run
 from mutrose.mutrose_json_parser import MultroseJson
 
 from hospital_world.bindings import all_skills, near_ic_pc_rooms, get_position_of_poi, hospital_map, world_model_domain, container
+
+
+class DomaingTranslatorWrapper:
+    def __init__(self, wrapped):
+        self.wrapped = wrapped
+        self.trans_dict = {
+            'RoomA' : 'IC Room 1',
+            'Kitchen' : 'Respiratory Control',
+            'navto': 'navigation',
+            'approach': 'approach_person',
+            'load': 'deposit',
+            'pick': 'pick_up',
+            'open': 'operate_drawer',
+            'retrieve': 'pick_up'
+        }
+
+    def get(self, label: str, *domain_qualifiers: List[str], context: str =None):
+        if self.trans_dict.get(label):
+            label = self.trans_dict[label]
+        return self.wrapped.get(label, *domain_qualifiers)
 
 
 if __name__ == '__main__':
@@ -42,18 +64,18 @@ if __name__ == '__main__':
     requests = []
     
 
-    nurses = [{'label': 'nurse', 'position': get_position_of_poi(location), 'location': location.label } for location in nurse_locations]
+    nurses = [{'label': 'Patient1', 'position': get_position_of_poi(location), 'location': location.label } for location in nurse_locations]
 
     script_dir = os.path.dirname(__file__)
-    file_path = os.path.join(script_dir, './resources/ihtn_lsl.json')
-    with MultroseJson(file_path, world_model_domain) as ihtn:
+    file_path = os.path.join(script_dir, './ihtn_flp.json')
+    with MultroseJson(file_path, DomaingTranslatorWrapper(world_model_domain)) as ihtn:
         requests.append(Request(task=ihtn, timestamp=4000))
 
     ################
     # create the scenario
     ##
     scenario = Scenario(id=1, 
-        experiment_code='multrose_lab_samples',
+        experiment_code='multrose_flp',
         code='scenario_1', factors='--',
         robots=set_of_robot_factors, 
         persons= nurses,

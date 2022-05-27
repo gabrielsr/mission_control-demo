@@ -1,0 +1,12 @@
+{
+    "0": {
+        "name": "operate_drawer-close",
+        "type": "action",
+        "parent": "-1",
+        "locations": "",
+        "agents": [
+            "r1"
+        ],
+        "children": ""
+    }
+}
