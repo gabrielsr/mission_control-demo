@@ -21,7 +21,7 @@ from mission_control.deeco_integration.coordinator import Coordinator
 from mission_control.deeco_integration.plugins.requests_queue import RequestsQueue
 from mission_control.deeco_integration.mission_coordination_ensemble import MissionCoordinationEnsemble
 
-from resources.world_lab_samples import *
+from hospital_world.bindings import *
 
 class SimExec:
     def __init__(self, container: Container):
@@ -64,8 +64,9 @@ class SimExec:
         RequestsQueue(coord_node, requests)
         EnsembleReactor(coord_node, [ MissionCoordinationEnsemble() ])
 
+        cl = container[ContextualLogger]
         # mission coordinator component
-        coord = Coordinator(coord_node, name='mission_coordinator', required_skills=[], cf_process=cf_process)
+        coord = Coordinator(coord_node, name='mission_coordinator', required_skills=[], cl=cl, cf_process=cf_process)
         coord_node.add_component(coord)
 
         robots, robots_nodes = [], []
