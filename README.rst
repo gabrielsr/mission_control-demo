@@ -10,10 +10,7 @@ This project uses 'poetry' for mananing dependencies
 
 .. code:: bash
 
-    # install
-    ~$ pip install poetry
-    # Or
-    ~$ brew install poetry (macOS)
+    # install poetry [https://python-poetry.org/]
     # then use poetry to install dependencies
     ~$ poetry install
     # and configure a virtual environment in your shell
