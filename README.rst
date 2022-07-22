@@ -29,10 +29,7 @@ For fixing bugs and debuging, run side by side with 'hmrs_mission_control' code
 
 Run
 ===
-
-./mission_control_demo/lab_samples
-
-is an example of simulation. To run:
+Run one of the already configured missions from the root of the project (each line below is a different mission):
 
 .. code:: bash
 
