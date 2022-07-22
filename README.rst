@@ -16,10 +16,10 @@ This project uses 'poetry' for mananing dependencies
     # and configure a virtual environment in your shell
     ~$ poetry shell
 
-Importing hmrs_mission_control by code
+[Optional] Importing hmrs_mission_control by code
 -----------------------------------
 
-Run side by side with 'hmrs_mission_control' code for fixing bugs in it and debuging.
+For fixing bugs and debuging, run side by side with 'hmrs_mission_control' code 
 
 .. code:: bash
 
