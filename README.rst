@@ -42,7 +42,7 @@ is an example of simulation. To run:
     ~$ python ./mutrose/food_logistics/run_flp.py
 
 
-The are already configured 'Launch' actions for vscode, which can be used for execution/debuging.
+[optional] The are already configured 'Launch' actions for vscode, which can be used for execution/debuging.
 
 Result
 ------
