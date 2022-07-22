@@ -13,7 +13,7 @@ This project uses 'poetry' for mananing dependencies
     # install
     ~$ pip install poetry
     # Or
-    ~$ brew install poetry
+    ~$ brew install poetry (macOS)
     # then use poetry to install dependencies
     ~$ poetry install
     # and configure a virtual environment in your shell
