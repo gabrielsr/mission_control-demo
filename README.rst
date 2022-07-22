@@ -35,6 +35,7 @@ Run
 is an example of simulation. To run:
 
 .. code:: bash
+
     # within poetry shell
     ~$ python ./mission_control_demo/lab_samples/run.py
     ~$ python ./mutrose/lab_samples/run.py
